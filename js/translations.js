@@ -211,8 +211,8 @@ export const TRANSLATIONS = {
     descPhone: "Speak directly with our repair technician",
     labelHours: "Working Hours",
     valHours: "Sunday – Friday: 9:00 AM – 6:30 PM",
-    valSaturday: "Saturday: Closed",
-    descHours: "Walk-ins welcome Sunday through Friday",
+    valSaturday: "Saturday: 9:00 AM – 5:00 PM",
+    descHours: "Open all 7 days for walk-in repairs",
     btnContactWhatsApp: "💬 WhatsApp Us",
     btnContactCall: "📞 Call Technician",
 
@@ -446,8 +446,8 @@ export const TRANSLATIONS = {
     descPhone: "आमच्या रिपेअर तंत्रज्ञांशी थेट बोला",
     labelHours: "कामकाजाची वेळ",
     valHours: "रविवार ते शुक्रवार: सकाळी ९:०० ते संध्याकाळी ६:३०",
-    valSaturday: "शनिवार: बंद (Closed)",
-    descHours: "रविवार ते शुक्रवार थेट दुकानात स्वागत आहे",
+    valSaturday: "शनिवार: सकाळी ९:०० ते संध्याकाळी ५:००",
+    descHours: "आठवड्याचे सातही दिवस दुकान सुरू असते",
     btnContactWhatsApp: "💬 व्हॉट्सॲप करा",
     btnContactCall: "📞 टेक्निशियनला कॉल करा",
 

@@ -86,43 +86,28 @@ function initBusinessStatus() {
   const day = now.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
   const openMinutes = 9 * 60; // 9:00 AM
-  const closeMinutes = 18 * 60 + 30; // 6:30 PM
 
   const isMarathi = currentLang === 'mr';
+  const isSaturday = day === 6;
+  const closeMinutes = isSaturday ? (17 * 60) : (18 * 60 + 30); // 5:00 PM Sat, 6:30 PM Sun-Fri
+  const closeTimeStr = isSaturday ? (isMarathi ? "संध्या. ५:००" : "5:00 PM") : (isMarathi ? "संध्या. ६:३०" : "6:30 PM");
 
-  // Saturday is Closed
-  if (day === 6) {
-    statusContainer.classList.add('is-closed');
-    statusText.textContent = isMarathi 
-      ? "शनिवारी बंद असते (रविवारी सकाळी ९ वाजता उघडेल)" 
-      : "Closed on Saturdays (Opens Sun 9:00 AM)";
-    return;
-  }
-
-  // Sunday through Friday
   if (currentMinutes >= openMinutes && currentMinutes < closeMinutes) {
     statusContainer.classList.remove('is-closed');
     statusText.textContent = isMarathi 
-      ? "दुकान सुरू आहे (सकाळी ९:०० ते संध्या. ६:३०)" 
-      : "Open for Walk-ins (9:00 AM – 6:30 PM)";
+      ? `दुकान सुरू आहे (${closeTimeStr} पर्यंत)` 
+      : `Open for Walk-ins (Until ${closeTimeStr})`;
   } else if (currentMinutes < openMinutes) {
     statusContainer.classList.add('is-closed');
     statusText.textContent = isMarathi 
       ? "आज सकाळी ९:०० वाजता उघडेल" 
       : "Opens Today at 9:00 AM";
   } else {
-    // After 6:30 PM
+    // After closing time
     statusContainer.classList.add('is-closed');
-    if (day === 5) {
-      // Friday evening -> next is Sunday
-      statusText.textContent = isMarathi 
-        ? "आजची वेळ संपली (रविवारी सकाळी ९ वाजता उघडेल)" 
-        : "Closed (Opens Sunday at 9:00 AM)";
-    } else {
-      statusText.textContent = isMarathi 
-        ? "आजची वेळ संपली (उद्या सकाळी ९ वाजता उघडेल)" 
-        : "Closed (Opens Tomorrow at 9:00 AM)";
-    }
+    statusText.textContent = isMarathi 
+      ? "आजची वेळ संपली (उद्या सकाळी ९:०० वाजता उघडेल)" 
+      : "Closed for Today (Opens Tomorrow at 9:00 AM)";
   }
 }
 
