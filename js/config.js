@@ -27,8 +27,8 @@ export const SITE_CONFIG = {
   state: "Maharashtra",
   pincode: "401605",
   country: "India",
-  addressFull: "Main Market Road, Vikramgad, Dist. Palghar, Maharashtra 401605",
-  mapDirectionsUrl: "https://maps.google.com/?q=Vikramgad+Palghar+Maharashtra",
+  addressFull: "At Post Sant Rohidas Nagar, Taluka Vikramgad, Palghar, Maharashtra 401605",
+  mapDirectionsUrl: "https://maps.google.com/?q=Sant+Rohidas+Nagar+Vikramgad+Palghar+Maharashtra+401605",
   workingHours: "Sunday – Friday: 9:00 AM – 6:30 PM | Saturday: 9:00 AM – 5:00 PM",
   schedule: {
     weekdays: "Sunday – Friday: 9:00 AM – 6:30 PM",
